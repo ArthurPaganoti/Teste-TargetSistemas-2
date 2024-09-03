@@ -20,10 +20,12 @@ public class Faturamento {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode rootNode = mapper.readTree(new File(caminhoArquivo));
         JsonNode faturamentoArray = rootNode.get("faturamento");
-        for (JsonNode node : faturamentoArray) {
-            double valor = node.get("valor").asDouble();
-            if (valor > 0) {
-                valores.add(valor);
+        if (faturamentoArray != null) {
+            for (JsonNode node : faturamentoArray) {
+                double valor = node.get("valor").asDouble();
+                if (valor > 0) {
+                    valores.add(valor);
+                }
             }
         }
         return valores;

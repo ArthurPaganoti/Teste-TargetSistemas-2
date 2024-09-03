@@ -1,7 +1,5 @@
 package Exercicio03;
 
-import Exercicio03.Faturamento;
-
 import java.io.IOException;
 
 public class Main {
